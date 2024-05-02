@@ -1,0 +1,166 @@
+//foto
+body, html {
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+}
+
+.contenedor {
+  position: absolute;
+  top: 40%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.contenedor img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+//btn1
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.contenedor2 {
+  position: absolute;
+  top: 60%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+
+}
+
+.contenedor2 #btn1 {
+  font-size: 20px;
+  color: white;
+}
+
+//btn2
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.contenedor3 {
+  position: absolute;
+  top: 60%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.contenedor3 #btn2 {
+  font-size: 20px;
+  color: white;
+}
+
+/*imagen de fondo*/
+body{
+  background-image: url("Imagenes/fondo.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/*formulario*/
+.formu {
+  width: 200px;
+  position: absolute;
+  top: 40%;
+  left: 42%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+}
+
+
+.formu1 #nom{
+  position: absolute;
+  transform: scale(1.2);
+  top: 12%;
+  left: 105%;
+}
+.formu1 #num{
+  position: absolute;
+  transform: scale(1.2);
+  top: 37%;
+  left:105%;
+}
+.formu1 #correo{
+  position: absolute;
+  transform: scale(1.2);
+  top: 61%;
+  left: 105%;
+}
+
+/*btns volver*/
+.volver a {
+  position: absolute;
+  top: 92%;
+  left: 92%;
+  color: white;
+  font-size: 30px;
+  
+}
+
+a {
+  text-decoration: none; 
+}
+
+input{
+  text-align: center;
+  background-color: #9b9b9b;
+  border: none;
+  border-radius: 10px;
+}
+
+/*tabla*/ 
+table{
+   
+}
+
+.tabla {
+    width: 38%; 
+    margin: 0 auto; 
+}
+th, td {
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 10px;
+    color: white;
+}
+
+th {
+    background-color: #9b9b9b;
+}
+
+/*btn actualizar*/
+#btnactualizar{
+  position: absolute;
+  top: 93%;
+  left: 2%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #9b9b9b;
+}
+
+/*btn enviar*/
+#button{
+  top: 110%;
+  border-radius: 10px;
+  background-color: #9b9b9b;
+  font-size: 20px;
+}
+ /*btn borrar*/
+#btnborrar{
+  position: absolute;
+  top: 93%;
+  left: 12%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: #9b9b9b;
+}

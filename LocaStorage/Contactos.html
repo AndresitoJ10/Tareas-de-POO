@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Contactos</title>
+		<link rel="icon" href="Imagenes/imagen.ico">
+		<link rel="stylesheet" type="text/css" href="deco.css">
+	</head>
+
+	<body>
+
+		<button id="btnactualizar" type="button" onclick="mostrarContactos()">Actualizar</button>
+		<button id="btnborrar" type="button" onclick="borrar(), mostrarContactos()">Eliminar</button>
+		
+		<div class="tabla">
+			<table id="contactTable">
+	    		<thead>
+	        		<tr>
+	            		<th>Nombre</th>
+	            		<th>Teléfono</th>
+	            		<th>Correo</th>
+	        		</tr>
+	    		</thead>
+	    		<tbody id="contactBody">
+	        
+	    		</tbody>
+			</table>
+		</div>
+		<div class="volver">
+			<a href="index.html">Volver</a>
+		</div>
+		<script src="codigo-agregar.js"></script>
+		
+	</body>
+</html>
