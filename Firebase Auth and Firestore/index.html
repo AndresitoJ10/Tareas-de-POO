@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <!-- Agrega Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-firestore-compat.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            color: #ffffff;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        body {
+            background-color: #222c03;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+
+    <!-- Formulario de registro de usuario -->
+    <form id="registerForm">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <button onclick="inicio_sesion()" type="submit">Registrarse</button>
+    </form>
+
+    <script>
+        // Inicializar Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCgVfvABtcO8lxgmdSYA8ZqDrj94uot5D0",
+            authDomain: "auth-and-firestore-632ab.firebaseapp.com",
+            projectId: "auth-and-firestore-632ab",
+            storageBucket: "auth-and-firestore-632ab.appspot.com",
+            messagingSenderId: "701010938168",
+            appId: "1:701010938168:web:336e907eb02186cbfdd9cd",
+            measurementId: "G-03X6S0N1SW"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const firestore = firebase.firestore();
+
+        // Manejar el formulario de registro de usuario
+        const registerForm = document.getElementById("registerForm");
+        registerForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar envío del formulario
+
+            const email = registerForm.email.value;
+            const password = registerForm.password.value;
+
+            // Registrar un nuevo usuario
+            auth.createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    // Usuario registrado exitosamente
+                    const user = userCredential.user;
+                    console.log("Usuario registrado:", user);
+
+                    // Guardar información del usuario en Firestore
+                    firestore.collection("usuarios").doc(user.uid).set({
+                        email: email,
+                        fechaRegistro: firebase.firestore.FieldValue.serverTimestamp()
+                    })
+                    .then(() => {
+                        console.log("Información de usuario guardada en Firestore.");
+                        // Aquí puedes redirigir a otra página o realizar otras acciones después del registro
+                    })
+                    .catch((error) => {
+                        console.error("Error al guardar información de usuario en Firestore:", error);
+                    });
+                })
+                .catch((error) => {
+                    // Error al registrar usuario
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    console.error("Error al registrar usuario:", errorMessage);
+                    // Aquí puedes mostrar un mensaje de error al usuario o realizar otras acciones
+                });
+        });
+        function inicio_sesion(){
+        window.location.href = "login.html";
+        }
+        </script>
+
+</body>
+</html>
