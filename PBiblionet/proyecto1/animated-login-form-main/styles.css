@@ -1,0 +1,73 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Estilos para el formulario */
+.formulario-crearcuenta {
+    max-width: 400px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-crearcuenta h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.formulario-crearcuenta label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.formulario-crearcuenta input[type="email"],
+.formulario-crearcuenta input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.formulario-crearcuenta input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-crearcuenta input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.formulario-crearcuenta a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.formulario-crearcuenta a:hover {
+    color: #0056b3;
+}
